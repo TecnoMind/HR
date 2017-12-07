@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="TechMenuApp">
+    <head>
+          <meta lang="en">
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+          <meta name="viewport" 
+          content="width=device-width, initial-scale=1, shrink-to-fit=yes, maximum-scale=1, user-scalable=no">
+          <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+          <title>TechMenu</title>
+
+          <script type="text/javascript" src="js/angular.min.js"></script>
+          <!-- Font Awesome -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+          <!-- Bootstrap core CSS -->
+          <link href="css/bootstrap.min.css" rel="stylesheet">
+          <!-- Material Design Bootstrap -->
+          <link href="css/mdb.min.css" rel="stylesheet"> 
+          <!--Angular Material Preloader-->
+          <link href="css/materialPreloader.min.css" rel="stylesheet">
+          <!--Angular Toastr-->
+          <link href="node_modules/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet">
+          <!--Angular Notification Icons CSS-->
+          <link href="bower_components/angular-notification-icons/dist/angular-notification-icons.min.css" rel="stylesheet">
+          <!--Sweet Alert CSS-->
+          <link href="node_modules/sweetalert/dist/sweetalert.css" rel="stylesheet">
+          <!--Material Floating Button-->
+          <link href="node_modules/ng-material-floating-button/mfb/dist/mfb.min.css" rel="stylesheet">
+          <!--Sweet Alert Google Theme
+          <link href="node_modules/sweetalert/themes/google/google.css" rel="stylesheet">-->
+          <!--Custom Styles -->
+          <link href="css/style.css" rel="stylesheet">
+          <!-- Angular JS -->
+       
+    </head>
+
+    <body ng-controller="OrderController" ng-cloak>
+
+          <div class="no-horizontal-scrolling">
+                <ui-view></ui-view>
+          </div>
+          
+          <!-- JQuery -->
+          <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+          <!-- Angular Animate-->
+          <script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+          <!-- UI Router-->
+          <script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+          <!-- Lodash -->
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.14.1/lodash.min.js"></script>
+          <!-- Signal R-->
+          <script type="text/javascript" src="js/jquery.signalR-2.1.2.min.js"></script>
+           <!--Bootstrap core JavaScript -->
+          <script type="text/javascript" src="js/bootstrap.min.js"></script>
+          <!-- MDB core JavaScript -->
+          <script type="text/javascript" src="js/mdb.min.js"></script>
+          <!-- Angular Material Preloader -->
+          <script type="text/javascript" src="js/angular-Material-Preloader.min.js"></script>
+          <!-- Angular Toastr-->
+          <script type="text/javascript" src="node_modules/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+          <!-- Angular Notification Icons-->
+          <script type="text/javascript" src="bower_components/angular-notification-icons/dist/angular-notification-icons.min.js"></script>
+          <!-- Sweet Alerts-->
+          <script type="text/javascript" src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+          <!-- Material Floating Button-->
+          <script type="text/javascript" src="node_modules/ng-material-floating-button/src/mfb-directive.js"></script>
+          <!-- Angular Sweet Alerts Factory-->
+          <script type="text/javascript" src="js/SweetAlert.min.js"></script>
+
+          <!--App JS-->
+          <script type="text/javascript" src="js/app.js"></script>
+          <!--Admin JS-->
+          <script type="text/javascript" src="js/Admin/dishManageController.js"></script>
+          <script type="text/javascript" src="js/Admin/beverageManageController.js"></script>
+          <script type="text/javascript" src="js/Admin/orderManageController.js"></script>
+          <script type="text/javascript" src="js/Admin/orderItemsListController.js"></script>
+           <script type="text/javascript" src="js/User/HistorialOrdenes/HistorialOrdenesController.js"></script>
+
+          <!--Shared JS-->
+          <script type="text/javascript" src="js/Shared/crudOpsToastrService.js"></script>
+          <script type="text/javascript" src="js/Shared/orderItemDirective.js"></script>
+          <script type="text/javascript" src="js/Shared/orderMenuItemDirective.js"></script>
+          <script type="text/javascript" src="js/Shared/notificationService.js"></script>
+          <script type="text/javascript" src="js/Shared/menuItemDirective.js"></script>
+          <script type="text/javascript" src="js/Shared/crudOpsToastrService.js"></script>
+          <script type="text/javascript" src="js/Shared/modifyOrderService.js"></script>
+          <script type="text/javascript" src="js/Shared/newItemFormDirective.js"></script>
+
+          <!-- Dish JS-->
+          <script type="text/javascript" src="js/Dish/dishController.js"></script>
+          <script type="text/javascript" src="js/Dish/dishService.js"></script>
+          <!-- Beverage JS-->
+          <script type="text/javascript" src="js/Beverage/beverageController.js"></script>
+          <script type="text/javascript" src="js/Beverage/beverageService.js"></script>
+          <!-- Order JS-->
+          <script type="text/javascript" src="js/Order/orderController.js"></script>
+          <script type="text/javascript" src="js/Order/orderService.js"></script>
+          <script type="text/javascript" src="js/Order/orderTotalCalculationService.js"></script>
+
+    </body>
+</html>

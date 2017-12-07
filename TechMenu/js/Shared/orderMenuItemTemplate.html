@@ -1,0 +1,21 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header red white-text text-xs-center">{{item.name}}</div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <img ng-src="{{item.photoURL}}" class="img-rounded img-fluid" alt="{{item.name}}">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <p class="text-xs-center text-sm-center text-md-left"><strong>Descripción:</strong><br>{{item.description}}<br><strong>Precio:</strong><br>{{item.price | currency}}</p>
+                </div>
+                 <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="center-block pull-md-right" style="width:150px">                        
+                        <button opened-order="{{openedOrder}}" ng-disabled="openedOrder == false" ng-click="addOrderItem()" class="btn btn-primary btn-sm waves-effect">Agregar a mi orden</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

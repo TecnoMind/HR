@@ -1,0 +1,110 @@
+/* YOUR CUSTOM STYLES */
+
+body, html {
+background: #fff;
+margin: 0;
+padding: 0;
+}
+
+.modal{
+    margin-top: 130px;
+}
+
+.navbar-fixed{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+}
+
+.menu-item-card{
+    height: 480px;
+    margin-left: 10px;
+}
+
+.item-card-image{
+    width: 80%;
+    height: 160px;
+}
+
+.card-name-block{
+    height: 50px;
+}
+
+.card-description-block{
+    height: 100px;
+}
+
+.card-price-block{
+    height: 10px;
+}
+
+.custom-style .angular-notification-icons-icon{
+    width: 80px;
+    height: 80px;
+}
+
+.modal-header{
+    background-color:#F44336!important;
+}
+
+.btn-danger{
+    background-color: #F44336!important;
+}
+
+.modal-title{
+    color:white;
+}
+
+.mfb-component__button--main, .mfb-component__button--child {
+  background-color: #4285F4;
+}
+
+.mfb-component__button--main:hover, .mfb-component__button--child:hover {
+    color:white;
+}
+
+[data-mfb-label]:after {
+    background: #000;
+}
+
+.modal-footer{
+    text-align: center;
+}
+
+.add-item{
+    color: #4285F4;
+}
+
+.delete-item{
+    color:#F44336!important;
+}
+
+.spaced-row{
+    margin-top: 110px;
+}
+
+.no-horizontal-scrolling{
+    overflow-x: hidden;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+.fade.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.fade.ng-leave {
+  transition:0.5s linear all;
+  opacity:1;
+}
+.fade.ng-leave.ng-leave-active {
+  opacity:0;
+}

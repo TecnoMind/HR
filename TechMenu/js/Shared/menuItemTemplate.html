@@ -1,0 +1,52 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header red white-text text-xs-center">{{item.name}}</div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <img ng-if="!editing" ng-src="{{item.photoURL}}" class="img-rounded img-fluid" alt="{{item.name}}">
+                </div>
+                <div  ng-if="!editing" class="col-xs-12 col-sm-12 col-md-6">
+                    <p class="text-xs-center text-sm-center text-md-left">
+                        <strong>Descripción:</strong><br>
+                        <span>{{item.description}}</span><br>
+                        <strong>Precio:</strong><br>
+                        <span>{{item.price | currency}}</span>
+                    </p>
+                </div>
+                <div  ng-if="editing" class="col-xs-12 col-sm-12 col-md-3" style="margin-top:5px">
+                     <div class="md-form">
+                         <input class="form-control" ng-model="itemCopy.photoURL" id="description" type="text">
+                         <label class="active" for="description">Link de la imagen:</label>
+                     </div>
+                     <div class="md-form">
+                         <input class="form-control" ng-model="itemCopy.name" id="name"" type="text">
+                         <label class="active" for="description">Nombre</label>
+                     </div>
+                </div>
+                <div  ng-if="editing" class="col-xs-12 col-sm-12 col-md-3" style="margin-top:5px">
+                     <div class="md-form">
+                         <input class="form-control" ng-model="itemCopy.description" id="description" type="text">
+                         <label class="active" for="description">Descripción</label>
+                     </div>
+                     <div class="md-form">
+                         <input class="form-control" ng-model="itemCopy.price" id="price" type="number">
+                         <label class="active" for="price">Precio</label>
+                     </div>
+                </div>
+                <div  ng-if="!editing" class="col-xs-12 col-sm-12 col-md-4 text-xs-center">
+                    <div class="center-block pull-md-right" style="width:135px">
+                        <button class="btn btn-primary btn-sm waves-effect" ng-click="onEdit()" style="width:inherit">Modificar</button>
+                        <button class="btn btn-danger btn-sm waves-effect" ng-click="deleteMenuItem(item)" style="width:inherit">Eliminar del Menú</button>
+                    </div>
+                </div>
+                <div  ng-if="editing" class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="center-block pull-md-right" style="width:135px">
+                        <button  class="btn  btn-success btn-sm waves-effect" style="width:inherit" ng-click="changeMenuItem(itemCopy)">Guardar Cambios</button>
+                        <button  class="btn  btn-danger btn-sm waves-effect" style="width:inherit" ng-click="finishEdit()">Cancelar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

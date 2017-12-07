@@ -1,0 +1,24 @@
+      <div class="inner-wrap">
+		  <h2 style="padding:16px">{{header}}</h2>
+      	<section class="intro-01 signature-adler">
+         	<section id="works-container-bottoms" class="works-container signature-adler works-masonry-container clearfix white-bg works-thumbnails-view">
+	              <!-- start : works-item -->
+	              <div buy-item  ng-repeat="photoPost  in  bottomsPhotosPosts" class="works-item signature-adler ImageWrapper works-item-one-half-spaced zoom ui web">
+	                      <img data-no-retina alt="" title="" class="img-responsive" ng-src="{{photoPost.full_picture}}"/>
+	                      <a  class="venobox" data-gall="portfolio-gallery" href="{{photoPost.full_picture}}">
+	                          <div class="works-item-inner ImageOverlayHe">
+	                            <p class="valign text-center"><span class="white font3">{{photoPost.message}}</span></p>
+	                          </div>
+	                      </a>
+	              </div>
+	              <!-- end : works-item -->
+	          </section>
+            <!-- end : works-container -->
+		</section>
+      </div>
+
+    <!-- end : inner-wrap -->
+
+
+   
+   

@@ -1,0 +1,126 @@
+<div class="navbar-fixed">
+     <nav class="navbar navbar-dark red waves-effect">
+         <h1 class="text-xs-center white-text">TechMenu</h1>
+     </nav>
+     <ul class="nav nav-tabs tabs-3 white">
+         <li class="nav-item" ng-show="orders.length > 0">
+             <a class="nav-link" ui-sref="admin.orderManage.ordersList" role="tab">
+                 <notification-icon animation="grow" count="orders.length">
+                         <i class="fa fa-sticky-note-o fa-2x"></i>
+                         <span class="hidden-sm-down">Ordenes</span>
+                 </notification-icon>
+             </a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link" ta-toggle="tab" ui-sref="admin.dishManage.dishesList"><i class="fa fa-spoon fa-2x"></i> <span class="hidden-sm-down">Platillos</span></a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link" ui-sref="admin.beverageManage.beverageList"><i class="fa fa-glass fa-2x"></i> <span class="hidden-sm-down">Bebidas</span></a>
+         </li>
+     </ul>
+</div>
+
+<ui-view></ui-view>
+
+<mfb-menu class="hidden-sm-down animated slideInUp" position="br" effect="slidein-spring" label="Cerrar"
+        active-icon="fa fa-remove" resting-icon="fa fa-plus"
+        toggling-method="click" menu-state="fabState">
+            <button  mfb-button icon="fa fa-spoon" data-toggle="modal" data-target="#addDishModal" ng-click="toggle()"  label="Agregar Platillo"></button>
+            <button  mfb-button icon="fa fa-glass" data-toggle="modal" data-target="#addBeverageModal" ng-click="toggle()"  label="Agregar Bebida"></button>
+</mfb-menu>
+
+<mfb-menu class="hidden-md-up animated slideInUp" position="br" effect="slidein-spring" label="Cerrar"
+        active-icon="fa fa-remove" resting-icon="fa fa-plus"
+        toggling-method="click" menu-state="fabState">
+            <button  mfb-button icon="fa fa-spoon"  ui-sref="admin.dishManage.addDish" ng-click="toggle()"  label="Agregar Platillo"></button>
+            <button  mfb-button icon="fa fa-glass"  ui-sref="admin.beverageManage.addBeverage" ng-click="toggle()" label="Agregar Bebida"></button>
+</mfb-menu>
+
+<div ng-controller="DishManageController">
+    <div class="modal fade" id="addDishModal" tabindex="-1" role="dialog" aria-labelledby="addDish" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title text-xs-center" id="myModalLabel">Agregar {{name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img ng-if="!newDish.photoURL" ng-src="http://www.dirtyapronrecipes.com/wp-content/uploads/2015/10/food-placeholder.png" alt="{{name}}" class="img-fluid img-rounded">                         
+                            <img class="img-fluid img-rounded" ng-if="newDish.photoURL" ng-src="{{newDish.photoURL}}" alt="newDish.name">
+                            <div class="md-form">
+                                <input ng-model="newDish.photoURL" type="url" id="dish-photo" class="form-control"/>
+                                <label for="dish-photo" style="margin-top:10px">Link de la imagen: </label>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="md-form">
+                                <input ng-model="newDish.name" type="text" id="dish-name" class="form-control"/>
+                                <label for="dish-name">Nombre del platillo: </label>
+                            </div>
+                            <div class="md-form">
+                                <input ng-model="newDish.description" type="text" id="dish-description" class="form-control"/>
+                                <label for="dish-description">Descripción del platillo: </label>
+                            </div>
+                            <div class="md-form">
+                                <input ng-model="newDish.price" type="number" id="dish-price" class="form-control"/>
+                                <label for="dish-price">Precio del platillo: </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-sm waves-effect" ng-click="addDish(newDish)">Guardar</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<div ng-controller="BeverageManageController">
+    <div class="modal fade" id="addBeverageModal" tabindex="-1" role="dialog" aria-labelledby="addDish" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title text-xs-center" id="myModalLabel">Agregar {{name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img ng-if="!newBeverage.photoURL" ng-src="http://www.dirtyapronrecipes.com/wp-content/uploads/2015/10/food-placeholder.png" alt="{{name}}" class="img-fluid img-rounded">
+                            <img class="img-fluid img-rounded" ng-if="newBeverage.photoURL" ng-src="{{newBeverage.photoURL}}" alt="newBeverage.name">
+                            <div class="md-form">
+                                <input ng-model="newBeverage.photoURL" type="url" id="beverage-photo" class="form-control"/>
+                                <label for="beverage-photo" style="margin-top:10px">Link imagen: </label>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="md-form">
+                                <input ng-model="newBeverage.name" type="text" id="beverage-name" class="form-control"/>
+                                <label for="beverage-name">Nombre de la bebida: </label>
+                            </div>
+                            <div class="md-form">
+                                <input ng-model="newBeverage.description" type="text" id="beverage-description" class="form-control"/>
+                                <label for="beverage-description">Descripción de la bebida: </label>
+                            </div>
+                            <div class="md-form">
+                                <input ng-model="newBeverage.price" type="number" id="beverage-price" class="form-control"/>
+                                <label for="beverage-price">Precio de la bebida: </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-sm waves-effect" ng-click="addBeverage(newBeverage)">Guardar</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+

@@ -1,0 +1,23 @@
+<div ng-controller="HistorialOrdenesController" class="container-fluid spaced-row">
+    <div ng-repeat="orden in historialOrdenes" class="col-md-12">
+        <div  class="card">
+
+            <!--Card image-->
+            <!--/.Card image-->
+
+            <!--Card content-->
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">Orden {{orden.id}}</h4>
+                <!--Text-->
+                <p class="card-text">Cliente: {{orden.cliente}}</p>
+                <p class="card-text">Fecha: {{orden.fecha}}</p>
+
+                <a  class="btn btn-primary">Ver platillos ordenados</a>
+            </div>
+            <!--/.Card content-->
+
+        </div>
+    </div>
+</div>
+

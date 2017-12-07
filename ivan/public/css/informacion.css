@@ -1,0 +1,28 @@
+.top-titulo
+{
+    position: absolute;
+    right: 25%;
+    top: 2%;
+    left: 27%;
+}
+.menu
+{
+    position: absolute;
+    right: 25%;
+    top:15%;
+
+
+}
+
+.contenido
+{
+    top: 50%;
+}
+
+.video
+{
+    position: absolute;
+    top: 30%;
+    right: 25%;
+
+}

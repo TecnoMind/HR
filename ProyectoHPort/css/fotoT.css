@@ -1,0 +1,44 @@
+.img { 
+   width: 100%; 
+   height:100%; 
+    }
+.cardT{
+    width: 99%;
+    height: 100%;
+     padding-top:2pt;
+ 
+ 
+  }
+.gridList {
+    display: 'flex';
+    width: 80%;
+    height: 70%;
+  
+  }
+  .card {
+   width: 98%;
+   height: 70%;
+}
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+ .block {
+   
+   left: 200;
+ }
+ .TOP {
+    top:5px;
+  }
+  .btnC{
+   color : #05B3D6   ;  
+  }
+  .max{
+    width: 100%;
+    height: 500px;
+  }

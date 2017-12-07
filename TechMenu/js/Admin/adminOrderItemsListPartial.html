@@ -1,0 +1,76 @@
+<div class="container-fluid spaced-row hidden-sm-down">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header red white-text text-xs-center">
+                Orden #{{order.id}} <br> Nombre del cliente: {{order.clientName}}
+            </div>
+            <div class="card-block" style="height:350px; overflow-y:scroll">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th class="text-xs-center">Cantidad</th>
+                                <th class="text-xs-center">Precio</th>
+                                <th class="text-xs-center">Total</th>
+                                <th></th>
+                                <th></th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="chosenDish in order.chosenDishes" >
+                                <tr>
+                                <th><img class="img-rounded" width="100px" height="70px" ng-src="{{chosenDish.dish.photoURL}}" alt="{{chosenDish.dish.name}}"></th>
+                                <th><p><small>{{chosenDish.dish.name}}</small></p></th>
+                                <th><p class="text-xs-center"><small>{{chosenDish.quantity}}</small></p></th>
+                                <th><p class="text-xs-center"><small>{{chosenDish.dish.price | currency}}</small></p></th>
+                                <th><p class="text-xs-center"><small>{{chosenDish.quantity * chosenDish.dish.price | currency}}</small></p></th>
+                                <th><button class="btn btn-primary btn-sm waves-effect pull-xs-right"  ng-click="incrementChosenItemQuantity(order, chosenDish)"><i class="fa fa-plus"></i></button></th>
+                                <th><button class="btn btn-danger btn-sm waves-effect" style="margin-left:-10px" ng-click="decrementChosenItemQuantity(order, chosenDish)"><i class="fa fa-minus"></i></button></th>
+                                </tr>
+                            </tbody>
+                            <tbody ng-repeat="chosenBeverage in order.chosenBeverages" >
+                                <tr>
+                                <th><img class="img-rounded" width="100px" height="70px" ng-src="{{chosenBeverage.beverage.photoURL}}" alt="{{chosenBeverage.beverage.name}}"></th>
+                                <th><p><small>{{chosenBeverage.beverage.name}}</small></p></th>
+                                <th><p class="text-xs-center"><small>{{chosenBeverage.quantity}}</small></p></th>
+                                <th><p class="text-xs-center"><small>{{chosenBeverage.beverage.price | currency}}</small></p></th>
+                                <th><p class="text-xs-center"><small>{{chosenBeverage.quantity * chosenBeverage.beverage.price | currency}}</small></p></th>
+                                <th><button class="btn btn-primary btn-sm waves-effect pull-xs-right" ng-click="incrementChosenItemQuantity(order, chosenBeverage)"><i class="fa fa-plus"></i></button></th>
+                                <th><button class="btn btn-danger btn-sm waves-effect" style="margin-left:-10px" ng-click="decrementChosenItemQuantity(order, chosenBeverage)"><i class="fa fa-minus"></i></button></th>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+                    <p class="text-xs-center"><strong>Total: {{order.orderTotal | currency}}</strong></p>
+                    <div class="center-block" style="width:300px; margin-bottom:20px">    
+                            <button type="button" style="margin-left:50px;" class="btn btn-primary waves-effect btn-sm" ng-click="dispatchOrder(order)">Despachar</button>
+                            <button type="button" class="btn btn-danger  waves-effect  btn-sm" style="width:92px" ng-click="cancelOrder(order)">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="row spaced-row hidden-md-up">
+    <div class="col-md-12">
+        <div class="list-group">
+            <button class="list-group-item red white-text text-xs-center" type="button">
+                Platillos
+            </button>
+            <button ng-repeat="chosenDish in order.chosenDishes" ng-click="goToItemDetails(chosenDish)" class="list-group-item waves-effect" type="button">
+                <span class="label bg-primary label-pill red pull-xs-right">{{chosenDish.quantity}}</span>
+                {{chosenDish.dish.name}}
+            </button>
+            <button class="list-group-item red white-text text-xs-center" type="button">
+                Bebidas
+            </button>
+            <button ng-repeat="chosenBeverage in order.chosenBeverages" ng-click="goToItemDetails(chosenBeverage)" class="list-group-item waves-effect" type="button">
+                <span class="label bg-primary label-pill red pull-xs-right">{{chosenBeverage.quantity}}</span>
+                {{chosenBeverage.beverage.name}}
+            </button>
+            <button class="list-group-item red white-text" type="button">
+                Total <span class="label bg-primary label-pill pull-xs-right">{{order.orderTotal | currency}}</span>
+            </button>
+        </div>
+    </div>
+</div>
+ 
