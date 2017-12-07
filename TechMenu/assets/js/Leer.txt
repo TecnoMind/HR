@@ -1,4 +1,0 @@
-archivos js
-escritos que no
-estan relacionados 
-con angularJS

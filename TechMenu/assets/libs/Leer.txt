@@ -1,3 +1,0 @@
-Librerias de 
-terceros
-como Jquery
